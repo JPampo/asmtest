@@ -1,25 +1,22 @@
-.model small 
-.data
-    num1 db 
-    num2 db 
-    resu db 
-.code 
-main proc 
-    mov ah,01
-    mov ax,@data
-    mov ds, ax
+.MODEL SMALL
+
+.CODE 
+MAIN PROC
+    MOV AH,1
+    INT 21H
     
-    mov al ,num1
-    add al ,num2
-    mov resu, al
+    SUB AL,30H
+    MOV DL,AL
+    INT 21H
     
-    add resu, 30h
+    SUB AL,30H
+    ADD DL,AL 
     
-    mov ah,02h
-    mov dl,resu
-    int 21h
-    mov ah, 4ch
-    int 21h
-main endp
-end main
+    ADD DL,30H
+    MOV AH,02
+    INT 21H
     
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN
