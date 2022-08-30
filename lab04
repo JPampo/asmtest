@@ -1,0 +1,100 @@
+.model small
+.data
+.code
+main proc
+
+mov dl,97
+mov ah,2
+mov cl,13
+
+volta: 
+int 21h
+mov bl,dl
+mov dl,10
+int 21h
+inc bl
+mov dl,bl
+dec cl
+JNZ volta
+mov ah,01
+int 21h
+mov cl, 13
+
+
+mov dl,110
+mov ah,2
+mov cl,13
+
+volta1: 
+int 21h
+mov bl,dl
+mov dl,10
+int 21h
+inc bl
+mov dl,bl
+dec cl
+JNZ volta1
+mov ah,01
+int 21h
+mov cl, 13
+
+
+
+mov dl,65
+mov ah,2
+mov cl,13
+
+volta2: 
+int 21h
+mov bl,dl
+mov dl,10
+int 21h
+inc bl
+mov dl,bl
+dec cl
+JNZ volta2
+mov ah,01
+int 21h
+mov cl, 13
+
+mov dl,48
+mov ah,02
+mov cl,9
+
+mov dl,78
+mov ah,2
+mov cl,13
+
+volta3: 
+int 21h
+mov bl,dl
+mov dl,10
+int 21h
+inc bl
+mov dl,bl
+dec cl
+JNZ volta3
+mov ah,01
+int 21h
+mov cl, 13
+
+mov dl,48
+mov ah,02
+mov cl,10
+
+
+volta4:
+int 21h
+mov bl,dl
+mov dl,10
+int 21h
+inc bl
+mov dl,bl
+dec cl
+jnz volta4
+
+
+mov ah,4ch
+int 21h
+main endp
+end main
